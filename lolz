@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+command_string=''
+declare -i i=1
+for word in $*; do
+    command_string+=$word
+    [[ $i -lt $# ]] && command_string+="/"
+    i+=1
+done
+
+echo "command: $command_string"
